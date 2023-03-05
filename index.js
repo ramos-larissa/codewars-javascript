@@ -20,14 +20,20 @@ spinWords("Hey fellow warriors"); // "Hey wollef sroirraw"
 
 // Given an array of integers, find the one that appears an odd number of times.
 // There will always be only one integer that appears an odd number of times.
-function findOdd(numbers) {
-  let obj = {};
-  numbers.forEach(function (el) {
-    obj[el] ? obj[el]++ : (obj[el] = 1);
-  });
+function findOdd(A) {
+  for (let i = 0; i < A.length; i++) {
+    let cont = 0;
+    let pos = 0;
 
-  for (prop in obj) {
-    if (obj[prop] % 2 !== 0) return Number(prop);
+    while (pos < A.length) {
+      if (A[i] == A[pos]) {
+        cont += 1;
+      }
+      pos += 1;
+    }
+    if (cont % 2 !== 0) {
+      return A[i];
+    }
   }
 }
 
